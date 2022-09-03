@@ -93,6 +93,7 @@ EOF
 resource "tls_private_key" "this1" {
   algorithm = "RSA"
   rsa_bits  = 4096
+  <! -- Demo on Github-->
 }
 resource "aws_key_pair" "this1" {
   key_name   = "terraform-key-deployment"
