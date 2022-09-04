@@ -33,8 +33,7 @@ resource "aws_instance" "deploy_instance" {
   iam_instance_profile   = aws_iam_instance_profile.test_profile_deploy.name
   vpc_security_group_ids = [aws_security_group.this1.id]
   user_data              = local.user_data
-
-
+  
   tags = {
     Name = "deployment-instance"
   }
@@ -114,6 +113,13 @@ resource "aws_security_group" "this1" {
     description = "TLS from VPC"
     from_port   = 8080
     to_port     = 8080
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  ingress {
+    description = "TLS from VPC"
+    from_port   = 2049
+    to_port     = 2049
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
