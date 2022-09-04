@@ -33,7 +33,7 @@ resource "aws_instance" "deploy_instance" {
   iam_instance_profile   = aws_iam_instance_profile.test_profile_deploy.name
   vpc_security_group_ids = [aws_security_group.this1.id]
   user_data              = local.user_data
-  <!--Demo on Github webhook-->
+  
   tags = {
     Name = "deployment-instance"
   }
