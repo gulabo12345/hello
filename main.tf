@@ -144,4 +144,3 @@ locals {
   sudo ./bin/catalina.sh start 
 EOF
 }
-ankita zhatu
